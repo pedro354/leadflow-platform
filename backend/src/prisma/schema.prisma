@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+
+}
+
+model Group {
+  id          Int    @id @default(autoincrement())
+  name        String @db.VarChar(255)
+  description String
+  // adicionamos relacionamentos muitos para muitos, que vai ter um array de leads que estão relacionados com o grupo que ele pertence
+  leads       Lead[] @relation("GroupLeads")
+}
+
+model Lead {
+  id        Int            @id @default(autoincrement())
+  name      String         @db.VarChar(255)
+  email     String         @unique @db.VarChar(255)
+  phone     String         @db.VarChar(20)
+  // Definimos o campo status do tipo LeadStatus que é um enum que criamos abaixo, e definimos o valor padrão como New
+  status    LeadStatus     @default(New)
+  // Adiconamos relacionamentos muitos para muitos, que vai ter um array de grupos que o lead pertence
+  groups    Group[]        @relation("GroupLeads")
+  createdAt DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+  campaigns LeadCampaign[]
+}
+
+// Definimos o enum LeadStatus com os possíveis status que um lead pode ter no sistema como New, Contacted, Qualified, Converted, Unresponsive, Disqualified e Archived
+enum LeadStatus {
+  // New: lead novo
+  New
+  // Contacted: lead que já foi contatado
+  Contacted
+  // Qualified: lead qualificado
+  Qualified
+  // Converted: caso o lead tenha sido convertido
+  Converted
+  // Unresponsive: caso o lead não tenha respostas
+  Unresponsive
+  // Disqualified: caso o lead tenha sido desqualificado caso nao seja apropriado
+  Disqualified
+  // Archived: caso o lead tenha sido arquivado
+  Archived
+}
+
+model Campaign {
+  id          Int            @id @default(autoincrement())
+  name        String         @db.VarChar(255)
+  description String
+  startDate   DateTime
+  endDate     DateTime
+  // leads relacionados com a campanha que ela foi criad, vai trazer um array de leads
+  leads       LeadCampaign[]
+}
+
+model LeadCampaign {
+  leadId     Int
+  campaignId Int
+  status     LeadCampaignStatus @default(New)
+  campaign   Campaign           @relation(fields: [campaignId], references: [id])
+  lead       Lead               @relation(fields: [leadId], references: [id])
+
+  // Definimos relacionamentos entre Lead e Campaign chave primaria composta
+  @@id([leadId, campaignId])
+}
+
+enum LeadCampaignStatus {
+  New
+  Engaged // Lead Engagado
+  Folloup_Scheduled // Status mais detalhado
+  Contacted
+  Qualified
+  Converted
+  Unresponsive
+  Disqualified
+  Re_Engaged
+  Opted_Out
+}

@@ -1,0 +1,8 @@
+@media (min-width: 768px) {
+    .sidebar {
+        height: auto;
+    }
+    .sidebar-top{
+        margin: 10px 0;
+    }
+}
