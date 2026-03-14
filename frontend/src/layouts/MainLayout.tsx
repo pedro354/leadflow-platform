@@ -13,7 +13,7 @@ export default function MainLayout(){
      <main className="app-container">
         <SideBar collapsed={collapsed} />
         <div className="content-area">
-        <TopBar toggleSidebar={toogleSidebar}  />
+        <TopBar toggleSidebar={toogleSidebar}/>
         <div className="page-content">
             <Outlet />
         </div>
