@@ -2,16 +2,17 @@ import { FaArrowLeft, FaMagnifyingGlass } from "react-icons/fa6";
 import { GrNotification } from "react-icons/gr";
 import { RxAvatar } from "react-icons/rx";
 import { Button, Container, Input, InputGroup } from "reactstrap";
-import { usePageTitle } from "../hooks/useTitle";
+import { usePageTitle } from "../../hooks/useTitle";
 
 export default function TopBar({toggleSidebar}: {toggleSidebar: () => void}) {
     const title = usePageTitle();
     return (
         <div className="topbar">
             <Container className="containerLeft">
-                <button>
+                <button className="arrowLeft">
 
-                <FaArrowLeft onClick={toggleSidebar} className="mr-3" /> {/* Botão de voltar */ }
+                <FaArrowLeft onClick={toggleSidebar} className="mr-3" /> 
+                
                 </button>
                 <h2>{title}</h2>
                 </Container>
