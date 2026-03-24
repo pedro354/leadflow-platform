@@ -1,66 +1,47 @@
 import { Table } from "reactstrap";
 
+//function dataCampaigns(){
+//    const leads = 100;
+//    const converted = 30;
+//   const convertionRate = (converted / leads) * 100;
+// return convertionRate;
+//}
+
 export default function CampaignPerfomanceSection(){
     return(
-        <Table >
+        <Table>
             <thead>
                 <tr>
-                    <th>Month</th>
-                    <th>Visits</th>
-                    <th>Unique Visitors</th>
-                    <th>Page Views</th>
-                    <th>Page Views Per Day</th>
-                    <th>Page Views Per Unique Visitor</th>
+                    <th>Campaign Name</th>
+                    <th>Leads</th>
+                    <th>Converted</th>
+                    <th>Conversion Rate</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>January</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
+                    <td>Americanas Ads</td>
+                    <td>100</td>
+                    <td>30</td>
+                    <td>33%</td>
                 </tr>
                 <tr>
-                    <td>February</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
+                    <td>Facebook Ads</td>
+                    <td>493</td>
+                    <td>32</td>
+                    <td>1.5%</td>
                 </tr>
                 <tr>
-                    <td>March</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
+                    <td>Instagram Ads</td>
+                    <td>440</td>
+                    <td>50</td>
+                    <td>440%</td>
                 </tr>
                 <tr>
-                    <td>April</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                </tr>
-                <tr>
-                    <td>May</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                </tr>
-                <tr>
-                    <td>June</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>120</td>
+                    <td>Twitter Ads</td>
+                    <td>203</td>
+                    <td>22</td>
+                    <td>922%</td>
                 </tr>
             </tbody>
         </Table>
