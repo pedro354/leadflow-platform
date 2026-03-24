@@ -2,50 +2,48 @@ import { Table } from "reactstrap";
 
 export default function RecentLeadsSection() {
     return (
-        <div>
             <Table>
                 <thead>
                     <tr>
-                        <th>Lead Name</th>
-                        <th>Lead Email</th>
-                        <th>Lead Status</th>
-                        <th>Lead target</th> // coluna de onde o usuário vai escolher o target? Linkedin
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Status</th>
+                        <th>Created At</th> 
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>John Doe</td>
-                        <td>john.doe@example.com</td>
-                        <td>Lead</td>
-                        <td>LinkedIn</td>
+                        <td>Tech Solutions</td>
+                        <td>Contacted</td>
+                        <td>2026-03-24</td>
                     </tr>
                     <tr>
                         <td>Jane Smith</td>
-                        <td>jane.smith@example.com</td>
-                        <td>Lead</td>
-                        <td>LinkedIn</td>
+                        <td>Web Development</td>
+                        <td>Not Contacted</td>
+                        <td>2026-03-25</td>
+                   </tr>
+                    <tr>
+                        <td>Michael Johnson</td>
+                        <td>Marketing</td>
+                        <td>New</td>
+                        <td>2026-03-26</td>
                     </tr>
                     <tr>
-                        <td>Bob Johnson</td>
-                        <td>bob.johnson@example.com</td>
-                        <td>Lead</td>
-                        <td>Website</td>
+                        <td>Sarah Williams</td>
+                        <td>IT Support</td>
+                        <td>Contacted</td>
+                        <td>2026-03-27</td>
                     </tr>
                     <tr>
-                        <td>Emily Davis</td>
-                        <td>emily.davis@example.com</td>
-                        <td>Lead</td>
-                        <td>LinkedIn</td>
-                    </tr>
-                    <tr>
-                        <td>Sarah Wilson</td>
-                        <td>sarah.wilson@example.com</td>
-                        <td>Lead</td>
-                        <td>Google Ads</td>
+                        <td>David Brown</td>
+                        <td>Software Development</td>
+                        <td>Opportunity</td>
+                        <td>2026-03-28</td>
                     </tr>
                 </tbody>
             </Table>
-        </div>
     )
 
 }

@@ -1,13 +1,20 @@
 import { Table } from "reactstrap";
 
-//function dataCampaigns(){
-//    const leads = 100;
-//    const converted = 30;
-//   const convertionRate = (converted / leads) * 100;
-// return convertionRate;
+
+//interface data {
+  //  leads: number;
+    //converted: number;
+    //convertionRate: number;
 //}
 
-export default function CampaignPerfomanceSection(){
+
+//function MathConversion(convertionRate: number) {
+  //  const leads = 130;
+    //const converted = 10.5;
+     //convertionRate = converted / leads * 100;
+     //return `${    parseFloat(Number(convertionRate).toFixed(2))}%`;
+//}
+export default function CampaignPerfomanceSection() {
     return(
         <Table>
             <thead>
@@ -21,27 +28,27 @@ export default function CampaignPerfomanceSection(){
             <tbody>
                 <tr>
                     <td>Americanas Ads</td>
-                    <td>100</td>
-                    <td>30</td>
-                    <td>33%</td>
+                    <td>130</td>
+                    <td>10.5</td>
+                    <td>8.08%</td>
                 </tr>
                 <tr>
                     <td>Facebook Ads</td>
-                    <td>493</td>
-                    <td>32</td>
-                    <td>1.5%</td>
+                    <td>130</td>
+                    <td>10.5</td>
+                    <td>8.08%</td>
                 </tr>
                 <tr>
                     <td>Instagram Ads</td>
-                    <td>440</td>
-                    <td>50</td>
-                    <td>440%</td>
+                    <td>130</td>
+                    <td>10.5</td>
+                    <td>8.08%</td>
                 </tr>
                 <tr>
                     <td>Twitter Ads</td>
-                    <td>203</td>
-                    <td>22</td>
-                    <td>922%</td>
+                    <td>130</td>
+                    <td>10.5</td>
+                    <td>8.08%</td>
                 </tr>
             </tbody>
         </Table>
